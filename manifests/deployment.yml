@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: imageteste 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: imageteste
+  template:
+    metadata:
+      labels:
+        app: imageteste 
+    spec:
+      containers:
+        - name: imageteste 
+          image: dockerimageregister.azurecr.io/imageteste
+          ports:
+          - containerPort: 80
